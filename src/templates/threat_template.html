@@ -1,0 +1,36 @@
+{# Jinja Template for Threat Intelligence #}
+
+<table border=1px solid black>
+
+<tr><th colspan="2">Name: {{ filename}}</th></tr>
+
+{% if threats is sequence and threats is not mapping %}
+	{% for threat in threats %}
+
+		{% set key_values = threat.split(',') %}
+			
+		{% if key_values|length == 2 %}
+		<tr>
+			<td>{{ key_values[0] }}</td>
+			<td>{{ key_values[1] }}</td>
+		</tr>
+		{% else %}
+		<tr><td>{{ threat }}</td></tr>
+		{% endif %}
+
+	{% endfor %}
+{% endif %}
+
+{% if threats is mapping %}
+	{% for threatkey, threatvalue in threats.items() %}
+			
+		<tr>
+			<td>{{ threatkey }}</td>
+			<td>{{ threatvalue }}</td>
+		</tr>
+
+	{% endfor %}
+{% endif %}
+
+</table>
+<br>

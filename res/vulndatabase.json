@@ -1,0 +1,5 @@
+{ 
+  "Buffer Overflow" : "Overrun memory into adjacent variables using malicious input to increase unauthorized privileges or execute unintended code",
+  "Cross-Site Scripting (XSS)" : "Use malicious input to execute unintended code in a web application",
+  "Path Traversal" :  "Use malicious input to traverse the filesystem and read unintended data via the application"
+}
